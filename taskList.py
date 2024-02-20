@@ -2,7 +2,8 @@ class TaskList:
     def __init__(self):
         self.tareas = []
 
-    def agregar_tarea(self, tarea):
+    def agregar_tarea(self, tarea, estado="En curso"):
+        tarea.estado = estado
         self.tareas.append(tarea)
 
     def eliminar_tarea(self, indice):
@@ -12,9 +13,19 @@ class TaskList:
             print("Índice de tarea inválido")
 
     def mostrar_tareas(self):
-        if self.tareas:
-            print("Tareas:")
-            for i, tarea in enumerate(self.tareas):
-                print(f"{i + 1}. {tarea}")
+        en_curso = [tarea for tarea in self.tareas if tarea.estado == "En curso"]
+        if en_curso:
+            print("Tareas en curso:")
+            for tarea in en_curso:
+                print(tarea)
         else:
-            print("No hay tareas")
+            print("No hay tareas en curso")
+
+    def reporte_tareas_completadas(self):
+        completadas = [tarea for tarea in self.tareas if tarea.estado == "Completada"]
+        if completadas:
+            print("Tareas completadas:")
+            for tarea in completadas:
+                print(tarea)
+        else:
+            print("No hay tareas completadas")

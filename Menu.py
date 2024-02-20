@@ -16,7 +16,8 @@ class Menu:
         print("1. Agregar nueva tarea")
         print("2. Marcar tarea como completada")
         print("3. Ver lista de tareas")
-        print("4. Salir")
+        print("4. Reporte de tareas completadas")
+        print("5. Salir")
 
     def ejecutar(self):
         while True:
@@ -30,11 +31,14 @@ class Menu:
                 tarea = Task(nombre, fecha_limite, hora_limite, prioridad)
                 self.lista_tareas.agregar_tarea(tarea)
             elif opcion == "2":
-                indice = int(input("Ingrese el índice de la tarea a eliminar: ")) - 1
-                self.lista_tareas.eliminar_tarea(indice)
+                indice = int(input("Ingrese el índice de la tarea a marcar como completada: ")) - 1
+                tarea = self.lista_tareas.tareas[indice]
+                tarea.estado = "Completada"
             elif opcion == "3":
                 self.lista_tareas.mostrar_tareas()
             elif opcion == "4":
+                self.lista_tareas.reporte_tareas_completadas()
+            elif opcion == "5":
                 print("Saliendo...")
                 break
             else:
