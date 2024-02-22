@@ -1,4 +1,6 @@
-## Enunciado
+## 📝Aplicacion To-Do List
+
+### Enunciado
 
 - Ejercicio: Desarrollo de una Aplicación de Lista de Tareas
 - Descripción del Proyecto:
@@ -22,7 +24,7 @@ Notas Adicionales:
 - Agregar al repositorio al docente katia.mansilla@ucb.edu.bo
 - Subir a NEO el link del repositorio
 
-## Análisis del Problema
+## ⚙️Análisis del Problema
 
 El problema propuesto implica el desarrollo de una aplicación de lista de tareas que tenga las siguientes características:
 
@@ -34,7 +36,7 @@ El problema propuesto implica el desarrollo de una aplicación de lista de tarea
 
 Para abordar este problema, es necesario diseñar una estructura que permita gestionar eficientemente las tareas y su estado, así como manejar la interacción con el usuario de manera intuitiva y clara.
 
-## Solución
+## 💡Solución
 
 Para resolver este problema, se puede implementar una aplicación utilizando el lenguaje de programación Python y aprovechando la Programación Orientada a Objetos (POO) para modelar las tareas y la lógica de la aplicación. Además, se puede utilizar la Programación Modular para organizar el código de manera más legible y mantenible.
 
