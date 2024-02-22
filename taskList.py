@@ -2,12 +2,15 @@ class TaskList:
     def __init__(self):
         self.tareas = []
 
+    # Funcion para agregar una tarea
     def agregar_tarea(self, tarea, estado="En curso"):
         tarea.estado = estado
         self.tareas.append(tarea)
 
+    # Funcion para completar tarea
     def completar_tarea(self, indice):
         msg = False
+        #Selecciona de la lista de tareas la tarea con el id seleccionado y la marca como completada
         for t in self.tareas:
             if t.idT == indice:
                 t.estado = "Completada"
@@ -16,7 +19,6 @@ class TaskList:
                 print()
                 print(f"Tarea {t.nombre} completada")
                 print()
-                print("-"*30)
                 msg = True
                 
         if msg==False:
@@ -25,11 +27,10 @@ class TaskList:
             print()
             print("Índice de tarea inválido o ya completado")
             print()
-            print("-"*30)
-        
-        
 
+    # Funcion para mostrar tareas en curso
     def reporte_tares_encurso (self):
+        # Agraga a la lista solo las tareas con el estado en curso
         en_curso = [tarea for tarea in self.tareas if tarea.estado == "En curso"]
         if en_curso:
             print()
@@ -39,16 +40,16 @@ class TaskList:
             for tarea in en_curso:
                 print(tarea)
             print()
-            print("-"*30)
         else:
             print()
             print("-"*30)
             print()
             print("No hay tareas en curso")
             print()
-            print("-"*30)
 
+    # Funcion para mostrar todas las tareas
     def mostrar_tareas(self):
+        # Valida que existan tareas en la lista
         if len(self.tareas) != 0:
             print()
             print("-"*30)
@@ -57,15 +58,16 @@ class TaskList:
             for tarea in self.tareas:
                 print(tarea)
             print()
-            print("-"*30)
         else:
             print()
             print("-"*30)
             print()
             print("No hay tareas")
             print()
-            print("-"*30)
+
+     # Funcion para mostrar tareas completadas       
     def reporte_tareas_completadas(self):
+        # Agraga a la lista solo las tareas con el estado completado
         completadas = [tarea for tarea in self.tareas if tarea.estado == "Completada"]
         if completadas:
             print()
@@ -76,11 +78,9 @@ class TaskList:
                 print(tarea)
 
             print()
-            print("-"*30)
         else:
             print()
             print("-"*30)
             print()
             print("No hay tareas completadas")
             print()
-            print("-"*30)

@@ -7,6 +7,7 @@ class Task:
         self.prioridad = prioridad
         self.estado = estado
 
+    # Funcion para mostrar los datos de la tarea
     def __str__(self):
         return f"{self.idT} {self.nombre} - Fecha límite: {self.fecha_limite} {self.hora_limite}, Prioridad: {self.prioridad}, Estado: {self.estado}"
 
