@@ -106,7 +106,7 @@ class Menu:
 
             # Reporte de tareas en curso
             elif opcion == "5":
-                self.lista_tareas.reporte_tares_encurso()
+                self.lista_tareas.reporte_tareas_encurso()
 
             # Reporte de tareas completadas
             elif opcion == "6":

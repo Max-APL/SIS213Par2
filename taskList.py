@@ -47,14 +47,14 @@ class TaskList:
             print("Índice de tarea inválido o ya completado")
             print()
 
-    def reporte_tareas_en_curso(self):
+    def reporte_tareas_encurso(self):
         en_curso = [tarea for tarea in self.tareas if tarea.estado == "En curso"]
         if en_curso:
             print("\n" + "-"*60)
             print("Tareas en curso:")
-            print("{:<20} {:<15} {:<15} {:<10} {:<10}".format("Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
+            print("{:<10} {:<20} {:<15} {:<15} {:<10} {:<10}".format("ID","Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
             for tarea in en_curso:
-                print("{:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
+                print("{:<10} {:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.idT, tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
             print()
         else:
             print("\n" + "-"*60)
@@ -64,9 +64,9 @@ class TaskList:
         if self.tareas:
             print("\n" + "-"*60)
             print("Tareas:")
-            print("{:<20} {:<15} {:<15} {:<10} {:<10}".format("Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
+            print("{:<10} {:<20} {:<15} {:<15} {:<10} {:<10}".format("ID","Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
             for tarea in self.tareas:
-                print("{:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
+                print("{:<10} {:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.idT, tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
             print()
         else:
             print("\n" + "-"*60)
@@ -77,9 +77,9 @@ class TaskList:
         if completadas:
             print("\n" + "-"*60)
             print("Tareas completadas:")
-            print("{:<20} {:<15} {:<15} {:<10} {:<10}".format("Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
+            print("{:<10} {:<20} {:<15} {:<15} {:<10} {:<10}".format("ID","Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
             for tarea in completadas:
-                print("{:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
+                print("{:<10} {:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.idT,tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
             print()
         else:
             print("\n" + "-"*60)
