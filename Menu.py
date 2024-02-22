@@ -23,9 +23,9 @@ class Menu:
         print("1. Agregar nueva tarea")
         print("2. Marcar tarea como completada")
         print("3. Ver lista de tareas")
-        print("3. Reporte de tareas en curso")
-        print("4. Reporte de tareas completadas")
-        print("5. Salir")
+        print("4. Reporte de tareas en curso")
+        print("5. Reporte de tareas completadas")
+        print("6. Salir")
         print("-"*30)
 
     # Funcion para validar el formato de la fecha
