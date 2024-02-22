@@ -7,6 +7,25 @@ class TaskList:
         tarea.estado = estado
         self.tareas.append(tarea)
 
+    # Funcion para eliminar una tarea
+    def eliminar_tarea(self, indice):
+        msg = False
+        for t in self.tareas:
+            if t.idT == indice:
+                self.tareas.remove(t)
+                msg = True
+                print()
+                print("-"*30)
+                print()
+                print(f"Tarea {t.nombre} eliminada")
+                print()
+        if msg==False:
+            print()
+            print("-"*30)
+            print()
+            print("No se encontró la tarea con el índice ingresado")
+            print()
+
     # Funcion para completar tarea
     def completar_tarea(self, indice):
         msg = False
