@@ -28,59 +28,40 @@ class TaskList:
             print("Índice de tarea inválido o ya completado")
             print()
 
-    # Funcion para mostrar tareas en curso
-    def reporte_tares_encurso (self):
-        # Agraga a la lista solo las tareas con el estado en curso
+    def reporte_tareas_en_curso(self):
         en_curso = [tarea for tarea in self.tareas if tarea.estado == "En curso"]
         if en_curso:
-            print()
-            print("-"*30)
-            print()
+            print("\n" + "-"*60)
             print("Tareas en curso:")
+            print("{:<20} {:<15} {:<15} {:<10} {:<10}".format("Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
             for tarea in en_curso:
-                print(tarea)
+                print("{:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
             print()
         else:
-            print()
-            print("-"*30)
-            print()
-            print("No hay tareas en curso")
-            print()
+            print("\n" + "-"*60)
+            print("No hay tareas en curso\n")
 
-    # Funcion para mostrar todas las tareas
     def mostrar_tareas(self):
-        # Valida que existan tareas en la lista
-        if len(self.tareas) != 0:
-            print()
-            print("-"*30)
-            print()
+        if self.tareas:
+            print("\n" + "-"*60)
             print("Tareas:")
+            print("{:<20} {:<15} {:<15} {:<10} {:<10}".format("Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
             for tarea in self.tareas:
-                print(tarea)
+                print("{:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
             print()
         else:
-            print()
-            print("-"*30)
-            print()
-            print("No hay tareas")
-            print()
+            print("\n" + "-"*60)
+            print("No hay tareas\n")
 
-     # Funcion para mostrar tareas completadas       
     def reporte_tareas_completadas(self):
-        # Agraga a la lista solo las tareas con el estado completado
         completadas = [tarea for tarea in self.tareas if tarea.estado == "Completada"]
         if completadas:
-            print()
-            print("-"*30)
-            print()
+            print("\n" + "-"*60)
             print("Tareas completadas:")
+            print("{:<20} {:<15} {:<15} {:<10} {:<10}".format("Descripcion", "Fecha límite", "Hora límite", "Prioridad", "Estado"))
             for tarea in completadas:
-                print(tarea)
-
+                print("{:<20} {:<15} {:<15} {:<10} {:<10}".format(tarea.nombre, tarea.fecha_limite, tarea.hora_limite, tarea.prioridad, tarea.estado))
             print()
         else:
-            print()
-            print("-"*30)
-            print()
-            print("No hay tareas completadas")
-            print()
+            print("\n" + "-"*60)
+            print("No hay tareas completadas\n")
