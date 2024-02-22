@@ -22,10 +22,11 @@ class Menu:
         print("Menú de opciones:")
         print("1. Agregar nueva tarea")
         print("2. Marcar tarea como completada")
-        print("3. Ver lista de tareas")
-        print("4. Reporte de tareas en curso")
-        print("5. Reporte de tareas completadas")
-        print("6. Salir")
+        print("3. Eliminar tarea")
+        print("4. Ver lista de tareas")
+        print("5. Reporte de tareas en curso")
+        print("6. Reporte de tareas completadas")
+        print("7. Salir")
         print("-"*30)
 
     # Funcion para validar el formato de la fecha
@@ -86,21 +87,33 @@ class Menu:
                     print("No hay tareas para marcar como completadas")
                     print()
 
+            # Eliminar tarea
+            elif opcion == "3":
+                # Valida que existan tareas en la lista
+                if len(self.lista_tareas.tareas) != 0:
+                    idT = int(input("Ingrese el Id de la tarea a eliminar: "))
+                    self.lista_tareas.eliminar_tarea(idT)
+                else:
+                    print()
+                    print("-"*30)
+                    print()
+                    print("No hay tareas para eliminar")
+                    print()
                 
             # Ver lista de tareas
-            elif opcion == "3":
+            elif opcion == "4":
                 self.lista_tareas.mostrar_tareas()
 
             # Reporte de tareas en curso
-            elif opcion == "4":
+            elif opcion == "5":
                 self.lista_tareas.reporte_tares_encurso()
 
             # Reporte de tareas completadas
-            elif opcion == "5":
+            elif opcion == "6":
                 self.lista_tareas.reporte_tareas_completadas()
 
             # Salir del programa
-            elif opcion == "6":
+            elif opcion == "7":
                 print("Saliendo...")
                 break
             else:
